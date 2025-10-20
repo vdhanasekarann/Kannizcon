@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kannizcon IT Enabling Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e5a8e 0%, #2980b9 100%);
+            color: white;
+            padding: 20px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+            }
+         .logo-img {
+                width:60px;
+                height:60px;
+                border-radius:50%;
+                object-fit:cover;
+                }
+
+        .company-info h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .company-info p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .nav {
+            background: #ffffff;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav button {
+            background: none;
+            border: none;
+            color: #1e5a8e;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .nav button:hover, .nav button.active {
+            background: #1e5a8e;
+            color: white;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        .service-detail {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .service-detail.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .service-header {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .service-header h2 {
+            color: #1e5a8e;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .service-header .subtitle {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .tech-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .tech-section h3 {
+            color: #1e5a8e;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .tech-badge {
+            background: linear-gradient(135deg, #2980b9, #1e5a8e);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(30, 90, 142, 0.3);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #2980b9;
+        }
+
+        .feature-card h4 {
+            color: #1e5a8e;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .benefits-list {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .benefits-list h3 {
+            color: #1e5a8e;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: start;
+        }
+
+        .benefit-icon {
+            width: 30px;
+            height: 30px;
+            background: #2980b9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+.footer {
+      text-align:center; padding:20px;
+      background:#1e5a8e; color:white;
+      font-size:14px; margin-top:40px;
+    }
+
+    ul {margin-top:15px; padding-left:25px;}
+    ul li {margin-bottom:10px; line-height:1.6;}
+
+    .contact-info p {margin:10px 0;}
+    .contact-info strong {color:#1e5a8e;}
+
+        .benefit-content h4 {
+            color: #1e5a8e;
+            margin-bottom: 5px;
+        }
+
+        .benefit-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .icon {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Kannizcon Logo" class="logo-img" />
+      <div class="company-info">
+        <h1>KANNIZCON IT ENABLING SERVICES</h1>
+        <p>Transforming Ideas into Powerful Digital Solutions</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="nav">
+<button class="active" onclick="showPage(event, 'web')">Web Development</button>
+<button onclick="showPage(event, 'mobile')">Mobile Apps</button>
+<button onclick="showPage(event, 'cloud')">Cloud Solutions</button>
+<button onclick="showPage(event, 'custom')">Custom Software</button>
+<button onclick="showPage(event, 'about')">About Us</button>
+<button onclick="showPage(event, 'shipping')">Shipping Policy</button>
+<button onclick="showPage(event, 'terms')">Terms &#38; Conditions</button>
+<button onclick="showPage(event, 'contact')">Contact</button>
+</div>
+
+    <div class="content">
+        <!-- Web Development -->
+        <div id="web" class="service-detail active">
+            <div class="service-header">
+                <h2>Web Development Services</h2>
+                <p class="subtitle">Build powerful, responsive web applications that drive business growth. Our expert developers create custom solutions tailored to your unique requirements using cutting-edge technologies.</p>
+            </div>
+
+            <div class="tech-section">
+                <h3>Technologies We Use</h3>
+                <div class="tech-badges">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Vite</span>
+                    <span class="tech-badge">.NET</span>
+                    <span class="tech-badge">C</span>
+                    <span class="tech-badge">Java</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>Custom Web Applications</h4>
+                        <p>Tailored web solutions designed specifically for your business processes, ensuring maximum efficiency and user satisfaction.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Responsive Design</h4>
+                        <p>Websites that work flawlessly across all devices - desktop, tablet, and mobile - providing consistent user experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>E-Commerce Platforms</h4>
+                        <p>Complete online shopping solutions with secure payment integration, inventory management, and analytics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Content Management</h4>
+                        <p>Easy-to-use CMS solutions that let you manage your website content without technical knowledge.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>API Integration</h4>
+                        <p>Seamless integration with third-party services and APIs to extend your application's functionality.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Performance Optimization</h4>
+                        <p>Lightning-fast loading speeds and optimized code for better user experience and SEO rankings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefits-list">
+                <h3>Why Choose Our Web Development Services</h3>
+                <div class="benefit-item">
+                    <div class="benefit-icon">1</div>
+                    <div class="benefit-content">
+                        <h4>Modern Technology Stack</h4>
+                        <p>We use the latest frameworks and tools like React and Vite to build fast, scalable applications that meet current web standards.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">2</div>
+                    <div class="benefit-content">
+                        <h4>Custom Solutions</h4>
+                        <p>Every business is unique. We develop custom web applications that align perfectly with your specific requirements and workflows.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">3</div>
+                    <div class="benefit-content">
+                        <h4>Scalable Architecture</h4>
+                        <p>Our applications are built to grow with your business, handling increased traffic and functionality as your needs evolve.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">4</div>
+                    <div class="benefit-content">
+                        <h4>Security First</h4>
+                        <p>We implement industry-standard security practices to protect your data and ensure compliance with regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Apps -->
+        <div id="mobile" class="service-detail">
+            <div class="service-header">
+                <h2>Mobile App Development</h2>
+                <p class="subtitle">Create engaging mobile experiences that connect with your users. We develop cross-platform applications that work seamlessly on both iOS and Android devices.</p>
+            </div>
+
+            <div class="tech-section">
+                <h3>Technologies We Use</h3>
+                <div class="tech-badges">
+                    <span class="tech-badge">Flutter</span>
+                    <span class="tech-badge">Java</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Dart</span>
+                    <span class="tech-badge">Android SDK</span>
+                    <span class="tech-badge">iOS Development</span>
+                    <span class="tech-badge">REST APIs</span>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>Cross-Platform Apps</h4>
+                        <p>Single codebase for both iOS and Android using Flutter, reducing development time and costs significantly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Native Performance</h4>
+                        <p>Apps that feel native to each platform with smooth animations and responsive user interfaces.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Offline Functionality</h4>
+                        <p>Build apps that work even without internet connection, syncing data when connectivity is restored.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Push Notifications</h4>
+                        <p>Keep users engaged with timely notifications and updates delivered directly to their devices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Real-time Features</h4>
+                        <p>Implement live chat, location tracking, and real-time data synchronization for dynamic experiences.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>App Store Deployment</h4>
+                        <p>Complete support for publishing your app to Google Play Store and Apple App Store.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefits-list">
+                <h3>Mobile App Development Advantages</h3>
+                <div class="benefit-item">
+                    <div class="benefit-icon">1</div>
+                    <div class="benefit-content">
+                        <h4>Flutter Expertise</h4>
+                        <p>Our team specializes in Flutter development, creating beautiful, natively compiled applications from a single codebase.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">2</div>
+                    <div class="benefit-content">
+                        <h4>Cost-Effective Development</h4>
+                        <p>Cross-platform development means you get apps for both platforms at a fraction of the cost of native development.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">3</div>
+                    <div class="benefit-content">
+                        <h4>User-Centric Design</h4>
+                        <p>We create intuitive interfaces that users love, following platform-specific design guidelines for optimal experience.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">4</div>
+                    <div class="benefit-content">
+                        <h4>Ongoing Support</h4>
+                        <p>Continuous maintenance and updates to keep your app running smoothly and compatible with latest OS versions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cloud Solutions -->
+        <div id="cloud" class="service-detail">
+            <div class="service-header">
+                <h2>Cloud Solutions</h2>
+                <p class="subtitle">Leverage the power of cloud computing for scalable, reliable, and accessible applications. Our cloud solutions ensure your data is always available, secure, and synchronized across all devices.</p>
+            </div>
+
+            <div class="tech-section">
+                <h3>Technologies We Use</h3>
+                <div class="tech-badges">
+                    <span class="tech-badge">Firestore</span>
+                    <span class="tech-badge">Firebase</span>
+                    <span class="tech-badge">Cloud Databases</span>
+                    <span class="tech-badge">AWS</span>
+                    <span class="tech-badge">Azure</span>
+                    <span class="tech-badge">Real-time Sync</span>
+                    <span class="tech-badge">Cloud Storage</span>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>Real-time Data Sync</h4>
+                        <p>Instant data synchronization across all devices and platforms, ensuring everyone has the latest information.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Scalable Infrastructure</h4>
+                        <p>Cloud solutions that automatically scale based on demand, handling traffic spikes without performance issues.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Database Management</h4>
+                        <p>Expert database design and optimization for fast queries and efficient data storage using Firestore and SQL.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Data Security</h4>
+                        <p>Enterprise-grade security with encryption, authentication, and access control to protect your sensitive data.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Backup & Recovery</h4>
+                        <p>Automated backup systems and disaster recovery plans to ensure your data is never lost.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Cloud Migration</h4>
+                        <p>Smooth transition of your existing systems to cloud infrastructure with minimal downtime.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefits-list">
+                <h3>Cloud Solutions Benefits</h3>
+                <div class="benefit-item">
+                    <div class="benefit-icon">1</div>
+                    <div class="benefit-content">
+                        <h4>Firestore Integration</h4>
+                        <p>Specialized expertise in Firestore for building real-time applications with seamless data synchronization.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">2</div>
+                    <div class="benefit-content">
+                        <h4>Always Accessible</h4>
+                        <p>Your data and applications are accessible from anywhere, on any device, at any time.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">3</div>
+                    <div class="benefit-content">
+                        <h4>Cost Optimization</h4>
+                        <p>Pay only for what you use with cloud services, reducing infrastructure costs and eliminating hardware maintenance.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">4</div>
+                    <div class="benefit-content">
+                        <h4>High Availability</h4>
+                        <p>99.9% uptime guarantee with redundant systems and automatic failover protection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Software -->
+        <div id="custom" class="service-detail">
+            <div class="service-header">
+                <h2>Custom Software Development</h2>
+                <p class="subtitle">Tailored software solutions designed specifically for your business needs. We develop production management systems, workflow automation tools, and enterprise applications that improve efficiency and quality.</p>
+            </div>
+
+            <div class="tech-section">
+                <h3>Technologies We Use</h3>
+                <div class="tech-badges">
+                    <span class="tech-badge">C</span>
+                    <span class="tech-badge">Java</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">.NET</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">REST APIs</span>
+                    <span class="tech-badge">Microservices</span>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>Production Management</h4>
+                        <p>Our proprietary web-based production tracking system, proven effective in managing complex workflows efficiently.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Workflow Automation</h4>
+                        <p>Automate repetitive tasks and streamline business processes to save time and reduce human error.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Client Integration</h4>
+                        <p>Seamless integration with your existing systems and databases, allowing real-time status monitoring.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Custom Reporting</h4>
+                        <p>Generate detailed reports and analytics tailored to your specific business metrics and KPIs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Enterprise Solutions</h4>
+                        <p>Large-scale software systems designed to handle complex business operations across departments.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Legacy Modernization</h4>
+                        <p>Update and modernize your existing software systems with new technologies and improved functionality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefits-list">
+                <h3>Custom Software Advantages</h3>
+                <div class="benefit-item">
+                    <div class="benefit-icon">1</div>
+                    <div class="benefit-content">
+                        <h4>Proven Track Record</h4>
+                        <p>We've successfully developed and implemented our own production management system, demonstrating our capability in building robust solutions.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">2</div>
+                    <div class="benefit-content">
+                        <h4>Improved Efficiency</h4>
+                        <p>Our custom tools have consistently helped clients reduce turnaround time and improve overall quality of operations.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">3</div>
+                    <div class="benefit-content">
+                        <h4>Perfect Fit</h4>
+                        <p>Unlike off-the-shelf software, our custom solutions are built exactly to match your unique business requirements.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">4</div>
+                    <div class="benefit-content">
+                        <h4>Full Ownership</h4>
+                        <p>You own the complete source code and have full control over future development and modifications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us -->
+        <div id="about" class="service-detail">
+            <div class="service-header">
+                <h2>About Kannizcon IT Enabling Services</h2>
+                <p class="subtitle">Your trusted partner in digital transformation and software innovation</p>
+            
+            <div class="about-section">
+                <h3>Who We Are</h3>
+                <p>Kannizcon IT Enabling Services is a leading software development and IT solutions provider dedicated to helping businesses achieve their digital goals. We understand the critical role that technology plays in modern business operations, and we're committed to delivering solutions that enhance efficiency, quality, and productivity.</p>
+                
+                <p>Our team of highly skilled software developers brings years of experience across multiple platforms and technologies, enabling us to tackle projects of any complexity and scale.</p>
+            </div>
+
+            <div class="about-section">
+                <h3>Our Expertise</h3>
+                <p>We specialize in developing customized software solutions across a wide range of platforms and technologies:</p>
+                <ul>
+                    <li><strong>Programming Languages:</strong> C, Java, Python, .NET, Dart</li>
+                    <li><strong>Web Technologies:</strong> React, Vite, HTML5, CSS3, JavaScript</li>
+                    <li><strong>Mobile Development:</strong> Flutter for cross-platform applications</li>
+                    <li><strong>Cloud Services:</strong> Firestore, Firebase, AWS, Azure</li>
+                    <li><strong>Database Solutions:</strong> SQL, NoSQL, Firestore, Cloud Databases</li>
+                    <li><strong>Enterprise Applications:</strong> Custom business software and workflow systems</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h3>Our Approach</h3>
+                <p>We believe in building long-term partnerships with our clients. Our development process is collaborative, transparent, and focused on delivering measurable results. We work closely with you to understand your business challenges and create solutions that address your specific needs.</p>
+                
+                <p>Our proprietary production management and tracking system, developed in-house, demonstrates our commitment to innovation and excellence. This web-based solution has proven its effectiveness in managing complex workflows and integrating seamlessly with client systems.</p>
+            </div>
+            <div class="about-section">
+                <h3>Why Choose Kannizcon?</h3>
+                <ul>
+                    <li>Experienced team with diverse technical expertise across multiple platforms</li>
+                    <li>Proven track record of delivering high-quality software solutions</li>
+                    <li>Custom development tailored to your specific business requirements</li>
+                    <li>Transparent project management with real-time status monitoring</li>
+                    <li>Commitment to improving turnaround time and overall quality</li>
+                    <li>Comprehensive support throughout development and beyond</li>
+                    <li>Integration capabilities with existing client systems and databases</li>
+                    <li>Focus on scalable, maintainable, and secure solutions</li>
+                </ul>
+            </div>
+        </div>
+       </div>
+
+<!-- Terms & Conditions -->
+<div id="terms" class="service-detail">
+  <div class="service-header">
+    <h2>Terms &#38; Conditions</h2>
+
+    <p class="subtitle">By using our services, you agree to the following terms and conditions:</p>
+    <ul>
+      <li>All services are subject to project-specific agreements.</li>
+      <li>Payment terms are defined prior to project initiation.</li>
+      <li>Kannizcon retains rights to modify offerings as needed.</li>
+      <li>Clients are responsible for providing accurate information.</li>
+      <li>All confidential information shared is protected under NDA.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Shipping Policy -->
+<div id="shipping" class="service-detail">
+  <div class="service-header">
+    <h2>Shipping &#38; Delivery Policy</h2>
+
+    <p class="subtitle">Since Kannizcon provides digital software and IT services, no physical shipping applies.</p>
+    <ul>
+      <li>Deliverables are shared electronically via secure platforms.</li>
+      <li>All project milestones and delivery timelines are defined in advance.</li>
+      <li>Support and updates are provided through digital channels.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contact -->
+<div id="contact" class="service-detail">
+  <div class="service-header">
+    <h2>Contact Us</h2>
+
+    <p class="subtitle">Have questions about Kannizcon? We're here to help.</p>
+    <p><strong>Email:</strong> dhanasekaransjh6@gmail.com</p>
+    <p><strong>Phone:</strong> +91-9600887711</p>
+    <p><strong>Address:</strong> Kannizcon IT Enabling Services, India</p>
+    <p><strong>Logo:</strong> <a href="logo.png" target="_blank">View Logo</a></p>
+  </div>
+</div>
+
+<div class="footer">
+    &#169; 2012 Kannizcon IT Enabling Services. All rights reserved.
+  </div>
+ </div>
+
+<script>
+function showPage(event, pageId) {
+  // Hide all sections
+  document.querySelectorAll('.service-detail').forEach(sec => sec.classList.remove('active'));
+
+  // Show the selected one
+  const target = document.getElementById(pageId);
+  if (target) target.classList.add('active');
+
+  // Highlight active button
+  document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
