@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">KANNIZCON K symbol</title>
+<desc id="desc">Vector logo with layered purple, cyan, blue and magenta rounded triangular ribbons and a white K letter.</desc>
+<defs>
+  <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6D20B5"/><stop offset="1" stop-color="#5122B8"/></linearGradient>
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#27D2F4"/><stop offset="1" stop-color="#168DE8"/></linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#287CEB"/><stop offset="1" stop-color="#4336C8"/></linearGradient>
+  <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D81B9C"/><stop offset="1" stop-color="#A51AB5"/></linearGradient>
+  <clipPath id="tri"><path d="M256 44 Q274 44 289 53 L447 145 Q466 156 466 179 L466 333 Q466 355 446 367 L287 459 Q265 472 243 459 L83 367 Q63 355 63 332 L63 180 Q63 157 83 145 L224 62 Q240 44 256 44Z"/></clipPath>
+</defs>
+<g clip-path="url(#tri)">
+  <path d="M256 44 Q274 44 289 53 L447 145 Q466 156 466 179 L466 333 Q466 355 446 367 L287 459 Q265 472 243 459 L83 367 Q63 355 63 332 L63 180 Q63 157 83 145 L224 62 Q240 44 256 44Z" fill="url(#purple)"/>
+  <path d="M80 133 Q80 111 103 111 H383 Q407 111 407 135 V390 L256 478 L80 175Z" fill="url(#cyan)"/>
+  <path d="M229 70 L468 209 L468 332 Q468 354 447 366 L287 459 Q265 472 243 459 L229 451Z" fill="url(#blue)"/>
+  <path d="M255 385 L339 338 L402 375 L287 459 Q265 472 243 459 L83 367 Q63 355 63 332 L63 300Z" fill="url(#pink)"/>
+  <path d="M229 70 L229 420 L265 367 L265 70Z" fill="#FFFFFF"/>
+  <path d="M266 289 L319 222 H365 L306 291 L369 376 H323Z" fill="#FFFFFF"/>
+</g>
+</svg>
